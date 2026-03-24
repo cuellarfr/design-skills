@@ -146,32 +146,52 @@ skill-name/
 
 ## Sources
 
-These skills synthesize material from established frameworks and standards:
+These skills synthesize material from established books, frameworks, and standards:
 
-- **Nielsen's 10 Usability Heuristics** — Heuristic evaluation framework and severity scales
-- **Laws of UX** (lawsofux.com) — 27 UX laws organized by design domain
-- **System Usability Scale (SUS)** — Standardized usability questionnaire and scoring methodology
-- **Atomic Design** — Five-level component hierarchy, pattern lab, interface inventories
-- **Design Systems** — Functional and perceptual patterns, shared language, pattern lifecycle
-- **W3C Design Tokens Community Group** — Token format specification, type system, alias syntax
-- **Real-world design systems** — Material Design 3, Polaris (Shopify), Carbon (IBM), Spectrum (Adobe), Lightning (Salesforce)
-- **Continuous Discovery Habits** (Teresa Torres) — Opportunity Solution Trees, story-based interviewing, assumption testing, product trio
-- **Jobs to Be Done** (Jim Kalbach) — Job mapping, desired outcomes, switch interviews, four forces, JTBD personas
-- **UX Strategy** (Jaime Levy) — Competitive analysis, value innovation, funnel design, guerrilla research
-- **Lean UX** (Jeff Gothelf & Josh Seiden) — Hypothesis-driven design, outcomes over outputs, MVP strategy, proto-personas
-- **HEART Framework** (Google) — Happiness, Engagement, Adoption, Retention, Task Success metrics
+### Books
+
 - **About Face** (Alan Cooper) — Product postures, perpetual intermediates, excise elimination, orchestration, considerate software, goal-directed design
+- **Atomic Design** (Brad Frost) — Five-level component hierarchy, pattern lab, interface inventories
+- **Blue Ocean Strategy** (W. Chan Kim & Renée Mauborgne) — Value innovation, four actions framework, strategy canvas
+- **Continuous Discovery Habits** (Teresa Torres) — Opportunity Solution Trees, story-based interviewing, assumption testing, product trio
+- **Design Systems** (Alla Kholmatova) — Functional and perceptual patterns, shared language, pattern lifecycle
+- **Don't Make Me Think** (Steve Krug) — Usability testing, self-evident design, trunk test
+- **Jobs to Be Done** (Jim Kalbach) — Job mapping, desired outcomes, switch interviews, four forces, JTBD personas
+- **Lean UX** (Jeff Gothelf & Josh Seiden) — Hypothesis-driven design, outcomes over outputs, MVP strategy, proto-personas
 - **Microinteractions** (Dan Saffer) — Four-part framework (trigger/rules/feedback/loops), signature moments, long wow lifecycle
-- **Statecharts and state machines** — Harel statecharts, parallel states, nested states, UI state modeling
-- **Motion design conventions** — Material Design 3 motion system, Apple Human Interface Guidelines animation principles, Disney's 12 principles adapted for UI
+- **Modular Web Design** (Nathan Curtis) — Design system governance, contribution models, adoption strategies
+- **Outcome-Driven Innovation** (Tony Ulwick) — Desired outcome statements, importance-satisfaction framework, opportunity scoring
 - **Sprint** (Jake Knapp, John Zeratsky, Braden Kowitz) — 5-day design sprint methodology, team roles, prototyping, user testing with 5 participants
-- **Design ops practice** — Handoff maturity models, design QA processes, team rituals, visual regression testing, documentation standards
+- **The Innovator's Dilemma** (Clayton Christensen) — Disruptive innovation theory, jobs-to-be-done origin
+- **UX Strategy** (Jaime Levy) — Competitive analysis, value innovation, funnel design, guerrilla research
+
+### Frameworks & Methodologies
+
 - **Alignment diagram methodology** — Journey maps, service blueprints, experience maps, ecosystem models
+- **Design ops practice** — Handoff maturity models, design QA processes, team rituals, visual regression testing, documentation standards
+- **Disney's 12 Principles of Animation** — Adapted for UI motion design (squash/stretch, anticipation, follow-through, easing)
+- **Four Forces of Switching** (Bob Moesta) — Push, pull, anxiety, habit — forces that drive or prevent product adoption
+- **HEART Framework** (Google) — Happiness, Engagement, Adoption, Retention, Task Success metrics
+- **Laws of UX** (lawsofux.com) — 27 UX laws organized by design domain (Hick's, Fitts's, Jakob's, Miller's, and more)
+- **LUMA Institute methods** — Workshop facilitation techniques (HMW, Creative Matrix, Dot Voting)
+- **Nielsen's 10 Usability Heuristics** — Heuristic evaluation framework and severity scales
 - **Service design principles** — Touchpoints, co-production, service ecology
-- **Continuous discovery** — Opportunity Solution Trees, assumption testing, story-based interviewing
-- **WCAG 2.2** — Web Content Accessibility Guidelines
+- **Statecharts** (David Harel) — Parallel states, nested states, UI state modeling
+- **System Usability Scale (SUS)** — Standardized usability questionnaire and scoring methodology
+
+### Standards & Design Systems
+
+- **Apple Human Interface Guidelines** — Platform conventions for motion, input, navigation, and layout
+- **Material Design 3** (Google) — Motion system, component specs, adaptive design, color system
+- **Polaris** (Shopify), **Carbon** (IBM), **Spectrum** (Adobe), **Lightning** (Salesforce) — Real-world design system references
+- **W3C Design Tokens Community Group** — Token format specification, type system, alias syntax
+- **WCAG 2.2** — Web Content Accessibility Guidelines (A, AA, AAA conformance levels)
 - **WebAIM** — Million report data, contrast requirements, testing tools
-- **LUMA Institute methods** — Workshop facilitation techniques
+
+### Design Traditions
+
+- **Bauhaus** — Form follows function, geometric fundamentals, systematic design thinking
+- **Swiss / International Typographic Style** — Grid systems, typographic hierarchy, objective visual communication
 
 ## License
 
