@@ -359,6 +359,7 @@ Load these for deeper guidance on specific topics:
 
 - `templates/strategy-brief-template.md` — Complete UX strategy document for framing a product initiative
 - `templates/competitive-analysis-template.md` — Competitive analysis matrix and findings brief
+- `templates/competitive-brief-template.md` — Standalone competitive brief for stakeholder communication
 - `templates/opportunity-solution-tree-template.md` — OST with guidance for each layer
 
 ## Examples

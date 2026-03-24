@@ -56,9 +56,9 @@ Connect design decisions to business outcomes through competitive analysis, oppo
 
 Covers the full strategy process — from framing business context through customer discovery, competitive positioning, value proposition design, hypothesis-driven validation, and outcome measurement. Integrates Opportunity Solution Trees, JTBD job mapping, HEART framework, and Lean UX principles.
 
-**Key references:** Outcomes and continuous discovery (OSTs, product trio, interview cadence), competitive analysis (matrix, value innovation, four actions framework, market positioning), Jobs to Be Done (job mapping, desired outcomes, four forces of switching, JTBD personas), metrics (HEART, North Star, funnel metrics, instrumentation), value proposition design (validation hierarchy, Lean UX loop, MVP strategy, business model alignment).
+**Key references:** Outcomes and continuous discovery (OSTs, product trio, interview cadence), competitive analysis (matrix, value innovation, four actions framework, market positioning, competitive briefs), Jobs to Be Done (job mapping, desired outcomes, four forces of switching, JTBD personas), metrics (HEART, North Star, funnel metrics, instrumentation), value proposition design (validation hierarchy, Lean UX loop, MVP strategy, business model alignment).
 
-`13 files` · `~5,500 lines`
+`14 files` · `~5,500 lines`
 
 ### Interaction Design
 Design microinteractions, product behavior, state machines, motion, and error prevention for digital products.
