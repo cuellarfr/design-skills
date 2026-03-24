@@ -5,302 +5,330 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design Skills for Claude Code</title>
   <meta name="description" content="Give Claude Code real design knowledge. 9 open-source skills covering research, critique, accessibility, journey mapping, design systems, strategy, interaction design, design ops, and visual polish.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- Reset & Foundation --- */
+    /* --- Reset --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gray-50:  #F9FAFB;
-      --gray-100: #F3F4F6;
-      --gray-200: #E5E7EB;
-      --gray-300: #D1D5DB;
-      --gray-400: #9CA3AF;
-      --gray-500: #6B7280;
-      --gray-600: #4B5563;
-      --gray-700: #374151;
-      --gray-800: #1F2937;
-      --gray-900: #111827;
-      --black: #0A0A0A;
-      --white: #FFFFFF;
-      --off-white: #FAFAFA;
-      --accent-500: #6366F1;
-      --accent-600: #4F46E5;
-      --accent-700: #4338CA;
-      --accent-50: #EEF2FF;
-      --accent-100: #E0E7FF;
-      --space-unit: 8px;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      --bg: #FAFAFA;
+      --fg: #0A0A0A;
+      --red: #E53935;
+      --gray-medium: #6B6B6B;
+      --gray-light: #B0B0B0;
+      --gray-rule: #D4D4D4;
+      --code-bg: #0A0A0A;
+      --code-fg: #D4D4D4;
+      --code-comment: #6B6B6B;
+      --rule-heavy: 3px solid var(--fg);
+      --rule-light: 1px solid var(--gray-rule);
+      --unit: 8px;
     }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0A0A0A;
+        --fg: #E8E8E8;
+        --red: #EF5350;
+        --gray-medium: #9E9E9E;
+        --gray-light: #616161;
+        --gray-rule: #2A2A2A;
+        --code-bg: #141414;
+        --code-fg: #D4D4D4;
+        --code-comment: #616161;
+        --rule-heavy: 3px solid var(--fg);
+        --rule-light: 1px solid var(--gray-rule);
+      }
+    }
+
+    html { font-size: 16px; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--gray-800);
-      background: var(--white);
-      line-height: 1.6;
+      /* Helvetica stack — the Swiss typeface */
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* --- Typography Scale (Major Third 1.25x) --- */
-    h1 { font-size: clamp(2.4rem, 5vw + 1rem, 3.8rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; }
-    h2 { font-size: clamp(1.6rem, 3vw + 0.5rem, 2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; }
-    h3 { font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.01em; font-weight: 600; }
-    p  { font-size: 1rem; line-height: 1.7; }
+    /* --- Typography: Perfect Fourth (1.333x) --- */
+    /* 16, 21, 28, 38, 50, 67 */
 
-    /* --- Layout --- */
     .container {
-      max-width: 1120px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 calc(var(--space-unit) * 3);
+      padding: 0 calc(var(--unit) * 4);
     }
 
     /* --- Hero --- */
     .hero {
-      padding: calc(var(--space-unit) * 12) 0 calc(var(--space-unit) * 10);
-      text-align: center;
-      background: linear-gradient(168deg, var(--white) 0%, var(--accent-50) 50%, var(--gray-50) 100%);
-      border-bottom: 1px solid var(--gray-200);
+      padding: calc(var(--unit) * 16) 0 calc(var(--unit) * 8);
+      border-bottom: var(--rule-heavy);
     }
 
-    .hero-badge {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--accent-600);
-      background: var(--accent-100);
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: calc(var(--space-unit) * 3);
+    .hero-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-medium);
+      margin-bottom: calc(var(--unit) * 4);
     }
 
-    .hero h1 { color: var(--black); max-width: 720px; margin: 0 auto calc(var(--space-unit) * 3); }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw + 0.5rem, 4.2rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: calc(var(--unit) * 4);
+      max-width: 12ch;
+    }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 1.5vw + 0.5rem, 1.2rem);
-      color: var(--gray-600);
-      max-width: 560px;
-      margin: 0 auto calc(var(--space-unit) * 5);
-      line-height: 1.6;
+      font-size: 1.125rem;
+      line-height: 1.55;
+      color: var(--gray-medium);
+      max-width: 48ch;
+      margin-bottom: calc(var(--unit) * 6);
     }
 
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent-600);
-      color: var(--white);
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 14px 28px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
-    .hero-cta:hover { background: var(--accent-700); transform: translateY(-1px); }
-    .hero-cta svg { width: 18px; height: 18px; }
-
-    .hero-stats {
+    .hero-meta {
       display: flex;
-      justify-content: center;
-      gap: calc(var(--space-unit) * 6);
-      margin-top: calc(var(--space-unit) * 5);
-      color: var(--gray-500);
-      font-size: 0.875rem;
+      gap: calc(var(--unit) * 6);
+      font-size: 0.8125rem;
+      color: var(--gray-medium);
+      letter-spacing: 0.02em;
     }
-    .hero-stats strong {
+    .hero-meta strong {
       display: block;
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--gray-800);
+      color: var(--fg);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
       font-variant-numeric: tabular-nums;
     }
 
-    /* --- Skills Section --- */
+    .hero-cta {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--fg);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+      margin-bottom: calc(var(--unit) * 6);
+    }
+    .hero-cta:hover { background: var(--red); color: #FAFAFA; }
+
+    /* --- Skills --- */
     .skills-section {
-      padding: calc(var(--space-unit) * 10) 0;
+      padding: calc(var(--unit) * 8) 0;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: calc(var(--space-unit) * 6);
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-medium);
+      margin-bottom: calc(var(--unit) * 4);
+      padding-bottom: calc(var(--unit) * 2);
+      border-bottom: var(--rule-heavy);
     }
-    .section-header h2 { color: var(--black); }
-    .section-header p { color: var(--gray-500); margin-top: calc(var(--space-unit) * 1); max-width: 480px; margin-left: auto; margin-right: auto; }
 
-    .skills-grid {
+    .skill-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: calc(var(--space-unit) * 3);
+      grid-template-columns: 200px 1fr;
+      gap: calc(var(--unit) * 4);
+      padding: calc(var(--unit) * 3) 0;
+      border-bottom: var(--rule-light);
+      align-items: baseline;
     }
 
-    .skill-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      padding: calc(var(--space-unit) * 4);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .skill-card:hover {
-      border-color: var(--gray-300);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    @media (max-width: 640px) {
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: calc(var(--unit) * 1);
+      }
     }
 
-    .skill-card h3 { margin-bottom: calc(var(--space-unit) * 1); }
+    .skill-row h3 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
 
-    .skill-card p {
-      color: var(--gray-600);
-      font-size: 0.925rem;
-      line-height: 1.6;
-      margin-bottom: calc(var(--space-unit) * 2);
+    .skill-body {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: calc(var(--unit) * 3);
+      align-items: baseline;
+    }
+
+    @media (max-width: 640px) {
+      .skill-body {
+        grid-template-columns: 1fr;
+        gap: calc(var(--unit) * 1);
+      }
+    }
+
+    .skill-body p {
+      font-size: 0.9375rem;
+      color: var(--gray-medium);
+      line-height: 1.55;
     }
 
     .skill-meta {
-      font-size: 0.8rem;
-      color: var(--gray-400);
+      font-size: 0.75rem;
+      color: var(--gray-light);
+      white-space: nowrap;
       font-variant-numeric: tabular-nums;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: calc(var(--space-unit) * 2);
-    }
-    .skill-tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--gray-600);
-      background: var(--gray-100);
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
-
-    /* --- Installation Section --- */
+    /* --- Install --- */
     .install-section {
-      padding: calc(var(--space-unit) * 10) 0;
-      background: var(--gray-50);
-      border-top: 1px solid var(--gray-200);
-      border-bottom: 1px solid var(--gray-200);
+      padding: calc(var(--unit) * 8) 0;
     }
 
     .install-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: calc(var(--space-unit) * 4);
-      margin-top: calc(var(--space-unit) * 5);
+      gap: calc(var(--unit) * 4);
+      margin-top: calc(var(--unit) * 4);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 640px) {
       .install-grid { grid-template-columns: 1fr; }
     }
 
-    .install-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      padding: calc(var(--space-unit) * 4);
+    .install-block h3 {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-medium);
+      margin-bottom: calc(var(--unit) * 1.5);
     }
-    .install-card h3 { margin-bottom: calc(var(--space-unit) * 2); }
 
     pre {
-      background: var(--gray-900);
-      color: var(--gray-100);
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      padding: calc(var(--space-unit) * 2) calc(var(--space-unit) * 3);
-      border-radius: var(--radius-sm);
+      background: var(--code-bg);
+      color: var(--code-fg);
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Liberation Mono', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      padding: calc(var(--unit) * 3);
       overflow-x: auto;
     }
-    pre .comment { color: var(--gray-500); }
+    pre .c { color: var(--code-comment); }
 
-    /* --- Architecture Section --- */
+    /* --- Architecture --- */
     .arch-section {
-      padding: calc(var(--space-unit) * 10) 0;
+      padding: calc(var(--unit) * 8) 0;
     }
 
-    .arch-content {
+    .arch-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: calc(var(--space-unit) * 6);
+      gap: calc(var(--unit) * 8);
+      margin-top: calc(var(--unit) * 4);
       align-items: start;
-      margin-top: calc(var(--space-unit) * 5);
     }
 
-    @media (max-width: 700px) {
-      .arch-content { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .arch-grid { grid-template-columns: 1fr; }
     }
 
-    .arch-tree {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      padding: calc(var(--space-unit) * 4);
-    }
     .arch-tree pre {
       background: transparent;
-      color: var(--gray-700);
+      color: var(--fg);
       padding: 0;
-      font-size: 0.85rem;
+      font-size: 0.8125rem;
+      line-height: 1.7;
     }
+    .arch-tree .c { color: var(--gray-light); }
 
-    .principles { list-style: none; }
+    .principles {
+      list-style: none;
+    }
     .principles li {
-      padding: calc(var(--space-unit) * 2) 0;
-      border-bottom: 1px solid var(--gray-100);
-      font-size: 0.95rem;
+      padding: calc(var(--unit) * 2) 0;
+      border-bottom: var(--rule-light);
+      font-size: 0.9375rem;
     }
     .principles li:last-child { border-bottom: none; }
-    .principles strong { color: var(--black); }
-    .principles span { color: var(--gray-500); display: block; margin-top: 4px; font-size: 0.875rem; }
+    .principles strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .principles span {
+      color: var(--gray-medium);
+      font-size: 0.875rem;
+    }
 
     /* --- Sources --- */
     .sources-section {
-      padding: calc(var(--space-unit) * 8) 0;
-      border-top: 1px solid var(--gray-200);
+      padding: calc(var(--unit) * 8) 0;
     }
 
-    .sources-list {
-      column-count: 2;
-      column-gap: calc(var(--space-unit) * 4);
-      margin-top: calc(var(--space-unit) * 3);
+    .sources-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--unit) * 6);
+      margin-top: calc(var(--unit) * 4);
+    }
+
+    @media (max-width: 640px) {
+      .sources-columns { grid-template-columns: 1fr; }
+    }
+
+    .sources-columns h3 {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-medium);
+      margin-bottom: calc(var(--unit) * 2);
+      padding-bottom: calc(var(--unit) * 1);
+      border-bottom: var(--rule-light);
+    }
+
+    .sources-columns ul {
       list-style: none;
     }
-    .sources-list li {
-      padding: calc(var(--space-unit) * 1) 0;
-      font-size: 0.9rem;
-      color: var(--gray-600);
-      break-inside: avoid;
-    }
-
-    @media (max-width: 600px) {
-      .sources-list { column-count: 1; }
+    .sources-columns li {
+      font-size: 0.8125rem;
+      color: var(--gray-medium);
+      padding: 5px 0;
+      line-height: 1.4;
     }
 
     /* --- Footer --- */
     footer {
-      padding: calc(var(--space-unit) * 5) 0;
-      border-top: 1px solid var(--gray-200);
-      text-align: center;
-      color: var(--gray-400);
-      font-size: 0.85rem;
+      padding: calc(var(--unit) * 4) 0;
+      border-top: var(--rule-heavy);
+      font-size: 0.75rem;
+      color: var(--gray-light);
+      letter-spacing: 0.02em;
     }
-    footer a { color: var(--gray-500); text-decoration: none; }
-    footer a:hover { color: var(--accent-600); }
+    footer a {
+      color: var(--gray-medium);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--red); }
 
-    /* --- Responsive --- */
-    @media (max-width: 480px) {
-      .hero { padding: calc(var(--space-unit) * 8) 0 calc(var(--space-unit) * 6); }
-      .hero-stats { gap: calc(var(--space-unit) * 3); }
-      .hero-stats strong { font-size: 1.25rem; }
-      .skills-grid { grid-template-columns: 1fr; }
+    /* --- Red accent bar --- */
+    .accent-bar {
+      width: 48px;
+      height: 4px;
+      background: var(--red);
+      margin-bottom: calc(var(--unit) * 3);
     }
   </style>
 </head>
@@ -309,14 +337,11 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <span class="hero-badge">Open Source</span>
-      <h1>Design Skills for Claude&nbsp;Code</h1>
+      <span class="hero-label">Open Source</span>
+      <h1>Design Skills for <span style="color:var(--red)">Claude&nbsp;Code</span></h1>
       <p class="hero-subtitle">Give Claude the design knowledge it's missing. Heuristics, research methods, systems thinking, and real frameworks — not vibes.</p>
-      <a href="https://github.com/cuellarfr/design-skills" class="hero-cta">
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        View on GitHub
-      </a>
-      <div class="hero-stats">
+      <a href="https://github.com/cuellarfr/design-skills" class="hero-cta">View on GitHub</a>
+      <div class="hero-meta">
         <div><strong>9</strong> skills</div>
         <div><strong>101</strong> files</div>
         <div><strong>34,200+</strong> lines</div>
@@ -327,143 +352,99 @@
   <!-- Skills -->
   <section class="skills-section">
     <div class="container">
-      <div class="section-header">
-        <h2>Skills</h2>
-        <p>Each skill works on its own. Reference files go deeper when you need them.</p>
-      </div>
-      <div class="skills-grid">
+      <div class="section-label">Skills</div>
 
-        <div class="skill-card">
-          <h3>UX Research</h3>
+      <div class="skill-row">
+        <h3>UX Research</h3>
+        <div class="skill-body">
           <p>From interview scripts to usability tests to workshop facilitation. Includes a catalog of 20+ methods, SUS scoring with the full 10-question scale, and Opportunity Solution Trees for continuous discovery.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">20+ methods</span>
-            <span class="skill-tag">SUS scoring</span>
-            <span class="skill-tag">Workshop methods</span>
-            <span class="skill-tag">Opportunity trees</span>
-          </div>
           <span class="skill-meta">14 files · 3,270 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Design Critique &amp; Evaluation</h3>
+      <div class="skill-row">
+        <h3>Design Critique &amp; Evaluation</h3>
+        <div class="skill-body">
           <p>A 7-step critique framework that uses Nielsen's heuristics, 27 UX laws, and 50+ interaction patterns to give feedback that's specific, not subjective. Includes severity scales and scoring rubrics.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">50+ patterns</span>
-            <span class="skill-tag">27 UX laws</span>
-            <span class="skill-tag">Heuristic evaluation</span>
-            <span class="skill-tag">Interaction design</span>
-          </div>
           <span class="skill-meta">10 files · 2,384 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Accessibility Audit</h3>
+      <div class="skill-row">
+        <h3>Accessibility Audit</h3>
+        <div class="skill-body">
           <p>Five audit layers — automated, keyboard, screen reader, visual, and flow — against WCAG 2.2 at A, AA, and AAA. Flags issues, rates severity, suggests code fixes, and generates reports.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">WCAG 2.2</span>
-            <span class="skill-tag">5-layer audit</span>
-            <span class="skill-tag">Code examples</span>
-            <span class="skill-tag">CI/CD integration</span>
-          </div>
           <span class="skill-meta">8 files · 2,175 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Journey Mapping</h3>
+      <div class="skill-row">
+        <h3>Journey Mapping</h3>
+        <div class="skill-body">
           <p>Seven diagram types — journey maps, service blueprints, experience maps, empathy maps, and more. Covers service ecology, experience prototyping, and the SERVQUAL measurement framework.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">7 diagram types</span>
-            <span class="skill-tag">Service blueprints</span>
-            <span class="skill-tag">Service ecology</span>
-            <span class="skill-tag">Workshop formats</span>
-          </div>
           <span class="skill-meta">10 files · 2,700+ lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Design Systems</h3>
+      <div class="skill-row">
+        <h3>Design Systems</h3>
+        <div class="skill-body">
           <p>The full lifecycle — from interface inventory through token architecture, component specs, pattern documentation, and governance. Covers Atomic Design, Kholmatova's pattern approach, and the W3C token format.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">3-tier tokens</span>
-            <span class="skill-tag">Component hierarchy</span>
-            <span class="skill-tag">Governance models</span>
-            <span class="skill-tag">Maturity model</span>
-          </div>
           <span class="skill-meta">13 files · ~4,500 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>UX Strategy</h3>
+      <div class="skill-row">
+        <h3>UX Strategy</h3>
+        <div class="skill-body">
           <p>Where design meets business. Opportunity Solution Trees, Jobs to Be Done mapping, competitive analysis with the four actions framework, HEART metrics, and hypothesis-driven validation.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Opportunity trees</span>
-            <span class="skill-tag">JTBD</span>
-            <span class="skill-tag">HEART framework</span>
-            <span class="skill-tag">Value innovation</span>
-          </div>
           <span class="skill-meta">13 files · ~5,500 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Interaction Design</h3>
+      <div class="skill-row">
+        <h3>Interaction Design</h3>
+        <div class="skill-body">
           <p>How things should behave, not just how they look. Microinteraction specs, state machines, product postures, motion timing, and a 6-level error prevention hierarchy. Based on Cooper and Saffer.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Microinteractions</span>
-            <span class="skill-tag">State machines</span>
-            <span class="skill-tag">Motion design</span>
-            <span class="skill-tag">Error prevention</span>
-          </div>
           <span class="skill-meta">12 files · ~5,000 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Design Ops &amp; Handoff</h3>
+      <div class="skill-row">
+        <h3>Design Ops &amp; Handoff</h3>
+        <div class="skill-body">
           <p>The operational side of design work. Five-day design sprints, handoff checklists that actually prevent "it's in Figma" handoffs, critique facilitation, documentation standards, and visual QA.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Design sprints</span>
-            <span class="skill-tag">Handoff specs</span>
-            <span class="skill-tag">Design QA</span>
-            <span class="skill-tag">Team rituals</span>
-          </div>
           <span class="skill-meta">12 files · ~5,500 lines</span>
         </div>
+      </div>
 
-        <div class="skill-card">
-          <h3>Design Elevation</h3>
+      <div class="skill-row">
+        <h3>Design Elevation</h3>
+        <div class="skill-body">
           <p>Makes any visual output look like a designer touched it. Typography scales, color systems, spacing grids, and a design interrogation protocol applied to presentations, dashboards, reports, and web pages.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Typography systems</span>
-            <span class="skill-tag">Color palettes</span>
-            <span class="skill-tag">Grid systems</span>
-            <span class="skill-tag">Design exemplars</span>
-          </div>
           <span class="skill-meta">9 files · 3,208 lines</span>
         </div>
-
       </div>
+
     </div>
   </section>
 
-  <!-- Installation -->
-  <section class="install-section" id="install">
+  <!-- Install -->
+  <section class="install-section">
     <div class="container">
-      <div class="section-header">
-        <h2>Installation</h2>
-        <p>Copy the files. Claude Code picks them up automatically.</p>
-      </div>
+      <div class="section-label">Installation</div>
       <div class="install-grid">
-        <div class="install-card">
+        <div class="install-block">
           <h3>All skills</h3>
-          <pre><code><span class="comment"># Clone the repo</span>
+          <pre><code><span class="c"># Clone the repo</span>
 git clone https://github.com/cuellarfr/design-skills.git
 
-<span class="comment"># Copy all skills to Claude Code</span>
+<span class="c"># Copy all skills to Claude Code</span>
 cp -r design-skills/*/ ~/.claude/skills/</code></pre>
         </div>
-        <div class="install-card">
+        <div class="install-block">
           <h3>Single skill</h3>
-          <pre><code><span class="comment"># Example: install only design critique</span>
+          <pre><code><span class="c"># Example: install only design critique</span>
 cp -r design-skills/design-critique \
   ~/.claude/skills/</code></pre>
         </div>
@@ -474,29 +455,26 @@ cp -r design-skills/design-critique \
   <!-- Architecture -->
   <section class="arch-section">
     <div class="container">
-      <div class="section-header">
-        <h2>How skills are structured</h2>
-        <p>One main file that works on its own. Reference files when you want to go deeper.</p>
-      </div>
-      <div class="arch-content">
+      <div class="section-label">How skills are structured</div>
+      <div class="arch-grid">
         <div class="arch-tree">
           <pre>skill-name/
-├── SKILL.md              <span class="comment"># Main file — works standalone</span>
+├── SKILL.md              <span class="c"># Main file — works standalone</span>
 │
-├── references/           <span class="comment"># Deep reference material</span>
+├── references/           <span class="c"># Deep reference material</span>
 │   ├── topic-a.md
 │   └── topic-b.md
 │
-├── templates/            <span class="comment"># Fillable deliverable templates</span>
+├── templates/            <span class="c"># Fillable deliverable templates</span>
 │   └── report-template.md
 │
-└── examples/             <span class="comment"># End-to-end walkthroughs</span>
+└── examples/             <span class="c"># End-to-end walkthroughs</span>
     └── walkthrough.md</pre>
         </div>
         <ul class="principles">
           <li>
             <strong>Opinionated</strong>
-            <span>Specific numbers and rubrics, not "consider…" language</span>
+            <span>Specific numbers and rubrics, not "consider..." language</span>
           </li>
           <li>
             <strong>Actionable</strong>
@@ -522,52 +500,56 @@ cp -r design-skills/design-critique \
   <!-- Sources -->
   <section class="sources-section">
     <div class="container">
-      <div class="section-header">
-        <h2>Sources</h2>
+      <div class="section-label">Sources</div>
+      <div class="sources-columns">
+        <div>
+          <h3>Books</h3>
+          <ul>
+            <li>About Face — Alan Cooper</li>
+            <li>Atomic Design — Brad Frost</li>
+            <li>Blue Ocean Strategy — Kim &amp; Mauborgne</li>
+            <li>Continuous Discovery Habits — Teresa Torres</li>
+            <li>Design Systems — Alla Kholmatova</li>
+            <li>Don't Make Me Think — Steve Krug</li>
+            <li>Jobs to Be Done — Jim Kalbach</li>
+            <li>Lean UX — Gothelf &amp; Seiden</li>
+            <li>Microinteractions — Dan Saffer</li>
+            <li>Modular Web Design — Nathan Curtis</li>
+            <li>Outcome-Driven Innovation — Tony Ulwick</li>
+            <li>Service Design — Polaine, Løvlie &amp; Reason</li>
+            <li>Sprint — Knapp, Zeratsky &amp; Kowitz</li>
+            <li>The Innovator's Dilemma — Clayton Christensen</li>
+            <li>UX Strategy — Jaime Levy</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frameworks &amp; Standards</h3>
+          <ul>
+            <li>Nielsen's 10 Usability Heuristics</li>
+            <li>Laws of UX (lawsofux.com)</li>
+            <li>System Usability Scale (SUS)</li>
+            <li>HEART Framework (Google)</li>
+            <li>WCAG 2.2 Guidelines</li>
+            <li>W3C Design Tokens Community Group</li>
+            <li>Disney's 12 Principles of Animation</li>
+            <li>Harel Statecharts</li>
+            <li>Four Forces of Switching — Bob Moesta</li>
+            <li>LUMA Institute Methods</li>
+            <li>Material Design 3 · Apple HIG</li>
+            <li>Polaris · Carbon · Spectrum · Lightning</li>
+            <li>WebAIM</li>
+            <li>SERVQUAL / RATER Framework</li>
+            <li>Bauhaus · Swiss Design</li>
+          </ul>
+        </div>
       </div>
-      <h3 style="font-size:0.95rem;color:var(--gray-500);margin-top:calc(var(--space-unit)*3);margin-bottom:calc(var(--space-unit)*1);">Books</h3>
-      <ul class="sources-list">
-        <li>About Face — Alan Cooper</li>
-        <li>Atomic Design — Brad Frost</li>
-        <li>Blue Ocean Strategy — Kim &amp; Mauborgne</li>
-        <li>Continuous Discovery Habits — Teresa Torres</li>
-        <li>Design Systems — Alla Kholmatova</li>
-        <li>Don't Make Me Think — Steve Krug</li>
-        <li>Jobs to Be Done — Jim Kalbach</li>
-        <li>Lean UX — Gothelf &amp; Seiden</li>
-        <li>Microinteractions — Dan Saffer</li>
-        <li>Modular Web Design — Nathan Curtis</li>
-        <li>Outcome-Driven Innovation — Tony Ulwick</li>
-        <li>Service Design — Polaine, Løvlie &amp; Reason</li>
-        <li>Sprint — Knapp, Zeratsky &amp; Kowitz</li>
-        <li>The Innovator's Dilemma — Clayton Christensen</li>
-        <li>UX Strategy — Jaime Levy</li>
-      </ul>
-      <h3 style="font-size:0.95rem;color:var(--gray-500);margin-top:calc(var(--space-unit)*3);margin-bottom:calc(var(--space-unit)*1);">Frameworks &amp; Standards</h3>
-      <ul class="sources-list">
-        <li>Nielsen's 10 Usability Heuristics</li>
-        <li>Laws of UX (lawsofux.com)</li>
-        <li>System Usability Scale (SUS)</li>
-        <li>HEART Framework (Google)</li>
-        <li>WCAG 2.2 Guidelines</li>
-        <li>W3C Design Tokens Community Group</li>
-        <li>Disney's 12 Principles of Animation</li>
-        <li>Harel Statecharts</li>
-        <li>Four Forces of Switching — Bob Moesta</li>
-        <li>LUMA Institute Methods</li>
-        <li>Material Design 3 · Apple HIG</li>
-        <li>Polaris · Carbon · Spectrum · Lightning</li>
-        <li>WebAIM</li>
-        <li>SERVQUAL / RATER Framework</li>
-        <li>Bauhaus · Swiss Design</li>
-      </ul>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>MIT License · <a href="https://github.com/cuellarfr/design-skills">GitHub</a></p>
+      Made with <span style="color:var(--red)">♥</span> by <a href="https://cuellar.fr">Carlos</a> · MIT License · <a href="https://github.com/cuellarfr/design-skills">GitHub</a>
     </div>
   </footer>
 
