@@ -69,6 +69,15 @@ Covers the full interaction design process — from microinteraction specificati
 
 `12 files` · `~5,000 lines`
 
+### Design Ops & Handoff
+Run design sprints, manage design-to-development handoff, establish team rituals, documentation standards, and design QA processes.
+
+Covers the operational side of design — how teams organize work, collaborate with engineering, and ship quality. From 5-day design sprints through handoff specs, critique facilitation, documentation standards, and visual QA processes. Grounded in Knapp's Sprint methodology and real-world design ops practice.
+
+**Key references:** Design sprints (5-day structure, team roles, remote/mini variations, post-sprint actions), handoff process (maturity levels, complete handoff checklist, annotation standards, spec formats, conflict resolution), team rituals (critique, design-eng sync, design review, retro, cadence planning), documentation standards (file organization, naming conventions, versioning, decision records), design QA (detailed checklist, severity scale, issue filing, acceptance criteria, automated visual regression).
+
+`12 files` · `~5,500 lines`
+
 ### Design Elevation
 Transform functional visual outputs into polished, professional designs.
 
@@ -155,6 +164,8 @@ These skills synthesize material from established frameworks and standards:
 - **Microinteractions** (Dan Saffer) — Four-part framework (trigger/rules/feedback/loops), signature moments, long wow lifecycle
 - **Statecharts and state machines** — Harel statecharts, parallel states, nested states, UI state modeling
 - **Motion design conventions** — Material Design 3 motion system, Apple Human Interface Guidelines animation principles, Disney's 12 principles adapted for UI
+- **Sprint** (Jake Knapp, John Zeratsky, Braden Kowitz) — 5-day design sprint methodology, team roles, prototyping, user testing with 5 participants
+- **Design ops practice** — Handoff maturity models, design QA processes, team rituals, visual regression testing, documentation standards
 - **Alignment diagram methodology** — Journey maps, service blueprints, experience maps, ecosystem models
 - **Service design principles** — Touchpoints, co-production, service ecology
 - **Continuous discovery** — Opportunity Solution Trees, assumption testing, story-based interviewing
