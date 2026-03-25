@@ -38,9 +38,9 @@ Create customer journey maps, service blueprints, experience maps, empathy maps,
 
 Guides diagram type selection across 7 diagram types, content structure, illustration syntax, alignment workshops, and strategic use of diagrams. Grounded in established alignment diagram methodology, Polaine, Løvlie & Reason's service design framework, and Kalbach's mapping methodology.
 
-**Key references:** Customer journey maps (8 required + 7 optional elements), service blueprints (5 swimlanes, 3 lines, blueprint slices, SERVQUAL/RATER measurement), experience types (transactional/continuous/transformational), service ecology mapping, user story maps (backbone, vertical slicing, walking skeleton), experience prototyping (3 fidelity levels), expectation gap analysis, time as a design object, experience maps and mental models, strategic diagram use (five value types, employee experience alignment, current vs. future state mapping), alignment workshop facilitation (half-day, full-day, and strategic extension formats).
+**Key references:** Customer journey maps (8 required + 7 optional elements), service blueprints (5 swimlanes, 3 lines, blueprint slices, SERVQUAL/RATER measurement), experience types (transactional/continuous/transformational), service ecology mapping, user story maps (backbone, vertical slicing, walking skeleton), experience prototyping (3 fidelity levels), expectation gap analysis, time as a design object, experience maps and mental models, strategic diagram use (five value types, employee experience alignment, current vs. future state mapping), alignment workshop facilitation (half-day, full-day, and strategic extension formats), JJG's Visual Vocabulary for flow diagramming (complete symbol set, diagram types, pairing patterns with alignment diagrams).
 
-`10 files` · `~3,400 lines`
+`11 files` · `~3,600 lines`
 
 ### Design Systems
 Build, document, and maintain design systems with design tokens, component specifications, pattern libraries, naming conventions, and governance processes.
@@ -159,6 +159,7 @@ These skills synthesize material from established books, frameworks, and standar
 - **Design Systems** (Alla Kholmatova) — Functional and perceptual patterns, shared language, pattern lifecycle
 - **Don't Make Me Think** (Steve Krug) — Usability testing, self-evident design, trunk test
 - **Information Architecture** (Rosenfeld, Morville & Arango) — Organization, labeling, navigation, and search systems, IA evaluation
+- **A Visual Vocabulary for Information Architecture and Interaction Design** (Jesse James Garrett) — Standard notation for site diagrams, flow diagramming, decision points, conditional selectors
 - **Jobs to Be Done** (Jim Kalbach) — Job mapping, desired outcomes, switch interviews, four forces, JTBD personas
 - **Lean UX** (Jeff Gothelf & Josh Seiden) — Hypothesis-driven design, outcomes over outputs, MVP strategy, proto-personas
 - **Mapping Experiences** (Jim Kalbach) — Strategic use of alignment diagrams, five value types, current vs. future state mapping, workshop facilitation
