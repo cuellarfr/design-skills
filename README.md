@@ -78,15 +78,6 @@ Covers the operational side of design — how teams organize work, collaborate w
 
 `12 files` · `~6,000 lines`
 
-### Design Elevation
-Transform functional visual outputs into polished, professional designs.
-
-Applies systematic design thinking to any visual output — presentations, spreadsheets, dashboards, reports, HTML, PDFs, web pages, and data visualizations. References best practices from Stripe, Linear, Apple, Bauhaus, and Swiss design.
-
-**Key references:** Typography scales, color systems, spacing systems, grid systems, design interrogation protocol, technique catalog, design exemplars.
-
-`9 files` · `3,208 lines`
-
 ## Installation
 
 ### Install all skills
