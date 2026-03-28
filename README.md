@@ -78,6 +78,15 @@ Covers the operational side of design — how teams organize work, collaborate w
 
 `12 files` · `~6,000 lines`
 
+### Design Elevation
+Transforms functional visual outputs into polished, professional designs.
+
+Systematically elevates any visual output — dashboards, presentations, reports, web pages, data visualizations — from functional to refined. Built on Tailwind CSS as the canonical design token system, structured through Alla Kholmatova's functional patterns (what users interact with) and perceptual patterns (how the design feels) framework, with data visualization principles grounded in Edward Tufte's work.
+
+**Key references:** Elevation protocol (8-phase systematic process), data visualization principles (data-ink ratio, chartjunk elimination, small multiples, micro/macro readings, layering and separation, graphical integrity), chart selection framework (9 data relationships, 20+ chart types with specific rules), Tailwind-native color systems (categorical, sequential, diverging palettes), typography scales (7 modular scales with context guidance), spacing systems, grid systems (dashboard, magazine, presentation, document), design interrogation checklist (70+ questions across typography, color, layout, data visualization), technique catalog (25+ named techniques), design exemplars (Stripe, Linear, Apple, Swiss Style).
+
+`10 files` · `~3,800 lines`
+
 ## Installation
 
 ### Install all skills
@@ -165,6 +174,8 @@ These skills synthesize material from established books, frameworks, and standar
 - **The User's Journey** (Donna Lichaw) — Narrative arc, storymapping, concept/origin/usage stories, peak-end design
 - **User Story Mapping** (Jeff Patton) — Backbone, walking skeleton, vertical slicing, release planning
 - **UX Strategy** (Jaime Levy) — Competitive analysis, value innovation, funnel design, guerrilla research
+- **The Visual Display of Quantitative Information** (Edward Tufte) — Data-ink ratio, graphical integrity, chartjunk elimination, small multiples, data density, aesthetics and technique
+- **Envisioning Information** (Edward Tufte) — Escaping flatland, micro/macro readings, layering and separation, small multiples, color and information, narratives of space and time
 - **Writing Is Designing** (Michael J. Metts & Andy Welfle) — UX writing as design, usable/useful/responsible lenses, voice and tone, content critique
 
 ### Frameworks & Methodologies
@@ -187,6 +198,7 @@ These skills synthesize material from established books, frameworks, and standar
 - **Material Design 3** (Google) — Motion system, component specs, adaptive design, color system
 - **Polaris** (Shopify), **Carbon** (IBM), **Spectrum** (Adobe), **Lightning** (Salesforce) — Real-world design system references
 - **W3C Design Tokens Community Group** — Token format specification, type system, alias syntax
+- **Tailwind CSS** — Design token system (colors, spacing, typography, shadows, border radius)
 - **WCAG 2.2** — Web Content Accessibility Guidelines (A, AA, AAA conformance levels)
 - **WebAIM** — Million report data, contrast requirements, testing tools
 
