@@ -90,6 +90,27 @@ background: rgba(12, 12, 12, 0.7);
 - 0.03s transitions for instant response
 - Generous margins (10-15% of viewport)
 
+### Trimble Modus
+**What they do exceptionally**:
+- Enterprise-grade design system for field + office workers
+- Consistent component patterns across a massive product portfolio
+- Professional, utilitarian aesthetic — functional over decorative
+- Full light/dark mode with comprehensive token system
+- Accessible by default (WCAG 2.1 AA)
+
+**Key techniques to borrow**:
+```css
+/* Modus foundations */
+font-family: 'Open Sans', system-ui, sans-serif;
+font-size: 14px; /* Body is 14px, not 16px */
+border-radius: 4px; /* Universal — never larger */
+box-shadow: 0 0 4px rgba(36, 35, 45, 0.3); /* Uniform, no direction */
+color: #252A2E; /* Trimble Gray for body text */
+--primary: #0063A3; /* Trimble Blue */
+```
+
+**Full reference**: See `references/modus-design-system.md` for complete token tables, component specs, dark mode values, and data visualization palettes.
+
 ## Design Movements & Principles
 
 ### Swiss/International Style

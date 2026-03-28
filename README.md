@@ -83,9 +83,9 @@ Transforms functional visual outputs into polished, professional designs.
 
 Systematically elevates any visual output — dashboards, presentations, reports, web pages, data visualizations — from functional to refined. Built on Tailwind CSS as the canonical design token system, structured through Alla Kholmatova's functional patterns (what users interact with) and perceptual patterns (how the design feels) framework, with data visualization principles grounded in Edward Tufte's work.
 
-**Key references:** Elevation protocol (8-phase systematic process), data visualization principles (data-ink ratio, chartjunk elimination, small multiples, micro/macro readings, layering and separation, graphical integrity), chart selection framework (9 data relationships, 20+ chart types with specific rules), Tailwind-native color systems (categorical, sequential, diverging palettes), typography scales (7 modular scales with context guidance), spacing systems, grid systems (dashboard, magazine, presentation, document), design interrogation checklist (70+ questions across typography, color, layout, data visualization), technique catalog (25+ named techniques), design exemplars (Stripe, Linear, Apple, Swiss Style).
+**Key references:** Elevation protocol (8-phase systematic process), data visualization principles (data-ink ratio, chartjunk elimination, small multiples, micro/macro readings, layering and separation, graphical integrity), chart selection framework (9 data relationships, 20+ chart types with specific rules), Tailwind-native color systems (categorical, sequential, diverging palettes), typography scales (7 modular scales with context guidance), spacing systems, grid systems (dashboard, magazine, presentation, document), design interrogation checklist (70+ questions across typography, color, layout, data visualization), technique catalog (25+ named techniques), design exemplars (Stripe, Linear, Apple, Swiss Style, Trimble Modus), Trimble Modus Design System reference (complete token tables, component specs, dark mode, data viz palettes).
 
-`10 files` · `~3,800 lines`
+`11 files` · `~4,600 lines`
 
 ## Installation
 
@@ -196,6 +196,7 @@ These skills synthesize material from established books, frameworks, and standar
 
 - **Apple Human Interface Guidelines** — Platform conventions for motion, input, navigation, and layout
 - **Material Design 3** (Google) — Motion system, component specs, adaptive design, color system
+- **Modus** (Trimble) — Complete enterprise design system reference with token tables, component specs, light/dark mode, data visualization palettes
 - **Polaris** (Shopify), **Carbon** (IBM), **Spectrum** (Adobe), **Lightning** (Salesforce) — Real-world design system references
 - **W3C Design Tokens Community Group** — Token format specification, type system, alias syntax
 - **Tailwind CSS** — Design token system (colors, spacing, typography, shadows, border radius)

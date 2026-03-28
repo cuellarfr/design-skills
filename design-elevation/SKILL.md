@@ -103,8 +103,19 @@ Use these as **illustrations of principles**, not as the system itself. The syst
 - **Linear**: Dark mode mastery, keyboard-first, minimal and precise
 - **Apple**: Scale contrasts, photography integration, restraint as premium
 - **Swiss/International Style**: Grid discipline, objective clarity, mathematical spacing
+- **Trimble Modus**: Enterprise utility, Open Sans 14px body, 4px radius, uniform shadows, professional restraint
 
 Refer to `references/design-exemplars.md` for specific techniques to borrow.
+
+### Trimble Modus Override
+
+When building for Trimble products or when Modus styling is requested, **Modus tokens override Tailwind defaults**:
+- Font: Open Sans (not Inter), body at 14px (not 16px)
+- Primary: `#0063A3` Trimble Blue (not Tailwind blue-600)
+- Border radius: `4px` everywhere (not `rounded-lg`)
+- Shadows: `0 0 4px rgba(36,35,45,0.3)` uniform (not directional)
+- Gray scale: Modus grays with cool/blue undertone (not Tailwind neutral grays)
+- Full reference: `references/modus-design-system.md`
 
 ## Critical Design Moves (Quick Reference)
 
@@ -140,7 +151,8 @@ For efficiency, load resources in this order:
 2. `references/data-visualization.md` — Load when any data/charts involved
 3. `references/technique-catalog.md` — Load for specific techniques
 4. `references/design-interrogation.md` — Load for quality checks
-5. Context-specific references (color, typography, spacing, grids) as needed
+5. `references/modus-design-system.md` — Load when Trimble/Modus styling is requested
+6. Context-specific references (color, typography, spacing, grids) as needed
 
 ## Output Standards
 
