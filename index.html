@@ -489,16 +489,15 @@ cp -r design-skills/design-critique \
         </div>
         <div class="install-block">
           <h3>Cursor</h3>
-          <pre><code><span class="c"># Copy each SKILL.md as a rule</span>
-for dir in design-skills/*/; do
-  name=$(basename "$dir")
-  cp "$dir/SKILL.md" \
-    ~/.cursor/rules/${name}.mdc
-done
+          <pre><code><span class="c"># Copy all skills</span>
+cp -r design-skills/*/ ~/.cursor/skills/
 
 <span class="c"># Or a single skill</span>
-cp design-skills/design-critique/SKILL.md \
-  ~/.cursor/rules/design-critique.mdc</code></pre>
+cp -r design-skills/design-critique \
+  ~/.cursor/skills/
+
+<span class="c"># Invoke with /skill-name</span>
+<span class="c"># or attach with @skill-name</span></code></pre>
         </div>
         <div class="install-block">
           <h3>Codex</h3>

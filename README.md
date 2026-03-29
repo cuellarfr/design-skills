@@ -119,17 +119,14 @@ Skills are automatically detected. Start a new conversation and they'll appear i
 ### Cursor
 
 ```bash
-# All skills — copy each SKILL.md as a rule file
-for dir in design-skills/*/; do
-  name=$(basename "$dir")
-  cp "$dir/SKILL.md" ~/.cursor/rules/${name}.mdc
-done
+# All skills
+cp -r design-skills/*/ ~/.cursor/skills/
 
 # Single skill
-cp design-skills/design-critique/SKILL.md ~/.cursor/rules/design-critique.mdc
+cp -r design-skills/design-critique ~/.cursor/skills/
 ```
 
-Rules are loaded automatically. Reference files (`references/`, `templates/`, `examples/`) can be copied into your project or referenced manually when deeper context is needed.
+Skills are loaded automatically from `~/.cursor/skills/`. Invoke with `/skill-name` or attach as context with `@skill-name`.
 
 ### Codex
 
