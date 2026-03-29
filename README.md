@@ -78,6 +78,15 @@ Covers the operational side of design — how teams organize work, collaborate w
 
 `12 files` · `~6,000 lines`
 
+### UX Writing
+Write clear, concise, user-centered interface copy for digital products.
+
+Covers the full UX writing process — from understanding context through drafting, editing, and testing. Four quality standards (purposeful, concise, conversational, clear), patterns for every UI element type, voice and tone frameworks with context-aware adaptation, formatting and style conventions, accessibility guidelines, and research-backed benchmarks. Originally created by [content-designer](https://content-designer.github.io/ux-writing-skill/), with additions from the [Trimble Modus Writing Style Guide](https://modus.trimble.com/foundations/writing-style/).
+
+**Key references:** Four quality standards, UX text patterns (titles, buttons, error messages with 4 types, success messages, empty states, forms, notifications), voice chart template, tone adaptation by emotional state and content type, formatting conventions (capitalization, numbers/dates, tense, abbreviations), accessibility (screen reader optimization, cognitive accessibility, plain language), benchmarks (sentence length, comprehension rates, character limits, reading levels), content usability checklist, error message template, empty state template, onboarding flow template, Figma integration guide.
+
+`10 files` · `~2,800 lines`
+
 ### Design Elevation
 Transforms functional visual outputs into polished, professional designs.
 
@@ -177,6 +186,7 @@ These skills synthesize material from established books, frameworks, and standar
 - **The Visual Display of Quantitative Information** (Edward Tufte) — Data-ink ratio, graphical integrity, chartjunk elimination, small multiples, data density, aesthetics and technique
 - **Envisioning Information** (Edward Tufte) — Escaping flatland, micro/macro readings, layering and separation, small multiples, color and information, narratives of space and time
 - **Writing Is Designing** (Michael J. Metts & Andy Welfle) — UX writing as design, usable/useful/responsible lenses, voice and tone, content critique
+- **Trimble Modus Writing Style Guide** (Trimble) — Four UX writing principles (clear, concise, useful, consistent), formatting conventions, capitalization rules, date/number formatting, abbreviation guidelines
 
 ### Frameworks & Methodologies
 
