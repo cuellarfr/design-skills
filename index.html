@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Skills for Claude Code</title>
-  <meta name="description" content="Give your AI coding tool real design knowledge. 10 open-source skills for Claude Code, Cursor, and Codex covering research, critique, accessibility, journey mapping, design systems, strategy, interaction design, UX writing, design ops, and visual polish.">
+  <title>Design Skills for AI Agents</title>
+  <meta name="description" content="Give your AI coding tool real design knowledge. 10 open-source skills for Claude Code, Cursor, Codex, and 40+ other agents — covering research, critique, accessibility, journey mapping, design systems, strategy, interaction design, UX writing, design ops, and visual polish.">
   <style>
     /* --- Reset --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -369,8 +369,8 @@
   <header class="hero">
     <div class="container">
       <span class="hero-label">Open Source</span>
-      <h1>Design Skills for <span style="color:var(--red)">Claude&nbsp;Code</span></h1>
-      <p class="hero-subtitle">Give Claude the design knowledge it's missing. Heuristics, research methods, systems thinking, and real frameworks. Also compatible with Cursor and Codex.</p>
+      <h1>Design Skills for <span style="color:var(--red)">AI&nbsp;Agents</span></h1>
+      <p class="hero-subtitle">Give your AI coding tool real design knowledge. Heuristics, research methods, systems thinking, and real frameworks — for Claude Code, Cursor, Codex, and 40+ other agents.</p>
       <a href="https://github.com/cuellarfr/design-skills" class="hero-cta">View on GitHub</a>
       <div class="hero-meta">
         <div><strong>10</strong> skills</div>
@@ -474,42 +474,8 @@
   <section class="install-section">
     <div class="container">
       <h2 class="section-label">Installation</h2>
-      <div class="install-grid">
-        <div class="install-block">
-          <h3>Claude Code</h3>
-          <pre><code><span class="c"># Clone the repo</span>
-git clone https://github.com/cuellarfr/design-skills.git
-
-<span class="c"># Copy all skills</span>
-cp -r design-skills/*/ ~/.claude/skills/
-
-<span class="c"># Or a single skill</span>
-cp -r design-skills/design-critique \
-  ~/.claude/skills/</code></pre>
-        </div>
-        <div class="install-block">
-          <h3>Cursor</h3>
-          <pre><code><span class="c"># Copy all skills</span>
-cp -r design-skills/*/ ~/.cursor/skills/
-
-<span class="c"># Or a single skill</span>
-cp -r design-skills/design-critique \
-  ~/.cursor/skills/
-
-<span class="c"># Invoke with /skill-name</span>
-<span class="c"># or attach with @skill-name</span></code></pre>
-        </div>
-        <div class="install-block">
-          <h3>Codex</h3>
-          <pre><code><span class="c"># Copy to your project</span>
-mkdir -p .codex/skills
-cp -r design-skills/*/ .codex/skills/
-
-<span class="c"># Then in AGENTS.md or codex.md:</span>
-<span class="c"># See .codex/skills/ for design</span>
-<span class="c"># reference materials.</span></code></pre>
-        </div>
-      </div>
+      <pre style="max-width:480px;margin-top:calc(var(--unit) * 4)"><code>npx skills add cuellarfr/design-skills</code></pre>
+      <p style="font-size:0.875rem;color:var(--gray-medium);margin-top:calc(var(--unit) * 2);max-width:52ch;line-height:1.55">Works with Claude Code, Cursor, Codex, OpenCode, and <a href="https://github.com/vercel-labs/skills#available-agents" style="color:var(--fg);text-decoration:underline">40+ other agents</a>. The CLI detects your installed agents and lets you choose which skills to install.</p>
     </div>
   </section>
 

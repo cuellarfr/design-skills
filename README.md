@@ -1,6 +1,6 @@
-# Design Skills for Claude Code
+# Design Skills for AI Agents
 
-A collection of UX and design skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Cursor](https://www.cursor.com/), and [Codex](https://openai.com/index/introducing-codex/). These skills give your AI coding tool deep knowledge of established design frameworks, heuristics, and methodologies — turning it into an informed design partner rather than a generic assistant.
+A collection of UX and design skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Cursor](https://www.cursor.com/), [Codex](https://openai.com/index/introducing-codex/) and other AI Agents. These skills give your AI coding tool deep knowledge of established design frameworks, heuristics, and methodologies — turning it into an informed design partner rather than a generic assistant.
 
 Each skill follows the same architecture: a main `SKILL.md` file that works standalone, plus `references/`, `templates/`, and `examples/` directories that provide depth on demand.
 
@@ -98,52 +98,24 @@ Systematically elevates any visual output — dashboards, presentations, reports
 
 ## Installation
 
-Clone the repo first, then copy skills to the right directory for your tool.
-
 ```bash
-git clone https://github.com/cuellarfr/design-skills.git
+npx skills add cuellarfr/design-skills
 ```
 
-### Claude Code
+This works with Claude Code, Cursor, Codex, OpenCode, and [40+ other agents](https://github.com/vercel-labs/skills#available-agents). The CLI will detect your installed agents and let you choose which skills to install.
 
 ```bash
-# All skills
-cp -r design-skills/*/ ~/.claude/skills/
+# List available skills before installing
+npx skills add cuellarfr/design-skills --list
 
-# Single skill
-cp -r design-skills/design-critique ~/.claude/skills/
-```
+# Install a specific skill
+npx skills add cuellarfr/design-skills --skill design-critique
 
-Skills are automatically detected. Start a new conversation and they'll appear in the available skills list.
+# Install globally (available across all projects)
+npx skills add cuellarfr/design-skills -g
 
-### Cursor
-
-```bash
-# All skills
-cp -r design-skills/*/ ~/.cursor/skills/
-
-# Single skill
-cp -r design-skills/design-critique ~/.cursor/skills/
-```
-
-Skills are loaded automatically from `~/.cursor/skills/`. Invoke with `/skill-name` or attach as context with `@skill-name`.
-
-### Codex
-
-```bash
-# All skills — copy to your project's agents directory
-mkdir -p .codex/skills
-cp -r design-skills/*/ .codex/skills/
-
-# Single skill
-mkdir -p .codex/skills
-cp -r design-skills/design-critique .codex/skills/
-```
-
-Then reference the skills in your `AGENTS.md` or `codex.md` file:
-
-```markdown
-See .codex/skills/ for design reference materials.
+# Install to a specific agent
+npx skills add cuellarfr/design-skills -a claude-code
 ```
 
 ## Skill Architecture
