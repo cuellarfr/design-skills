@@ -5,54 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design Skills for AI Agents</title>
   <meta name="description" content="Give your AI coding tool real design knowledge. 10 open-source skills for Claude Code, Cursor, Codex, and 40+ other agents — covering research, critique, accessibility, journey mapping, design systems, strategy, interaction design, UX writing, design ops, and visual polish.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- Reset --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #FAFAFA;
-      --fg: #0A0A0A;
-      --red: #E53935;
-      --gray-medium: #595959;
-      --gray-light: #767676;
-      --gray-rule: #D4D4D4;
-      --code-bg: #0A0A0A;
-      --code-fg: #D4D4D4;
-      --code-comment: #6B6B6B;
-      --rule-heavy: 3px solid var(--fg);
-      --rule-light: 1px solid var(--gray-rule);
+      --bg: #fff;
+      --surface: #f1f1f6;
+      --border: #cbcdd6;
+      --fg: #252a2e;
+      --text-secondary: #6a6e79;
+      --text-tertiary: #90939f;
+      --accent: #0063a3;
+      --accent-light: #dcedf9;
+      --accent-muted: #004f83;
+      --code-bg: #252a2e;
+      --code-fg: #e0e1e9;
+      --code-comment: #6a6e79;
+      --rule-heavy: 2px solid var(--accent);
+      --rule-light: 1px solid var(--border);
+      --radius: 4px;
+      --shadow: 0 0 2px rgba(37,42,46,0.3);
       --unit: 8px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0A0A0A;
-        --fg: #E8E8E8;
-        --red: #EF5350;
-        --gray-medium: #9E9E9E;
-        --gray-light: #8A8A8A;
-        --gray-rule: #2A2A2A;
-        --code-bg: #141414;
-        --code-fg: #D4D4D4;
-        --code-comment: #616161;
-        --rule-heavy: 3px solid var(--fg);
-        --rule-light: 1px solid var(--gray-rule);
+        --bg: #252a2e;
+        --surface: #353a40;
+        --border: #464b52;
+        --fg: #fff;
+        --text-secondary: #b7b9c3;
+        --text-tertiary: #6a6e79;
+        --accent: #019aeb;
+        --accent-light: #1a3a4f;
+        --accent-muted: #217cbb;
+        --code-bg: #171c1e;
+        --code-fg: #e0e1e9;
+        --code-comment: #6a6e79;
+        --rule-heavy: 2px solid var(--accent);
+        --rule-light: 1px solid var(--border);
       }
     }
 
-    html { font-size: 16px; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      /* Helvetica stack — the Swiss typeface */
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Open Sans', sans-serif;
       color: var(--fg);
       background: var(--bg);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* --- Typography: Perfect Fourth (1.333x) --- */
-    /* 16, 21, 28, 38, 50, 67 */
 
     .container {
       max-width: 960px;
@@ -63,33 +69,33 @@
     /* --- Hero --- */
     .hero {
       padding: calc(var(--unit) * 16) 0 calc(var(--unit) * 8);
-      border-bottom: var(--rule-heavy);
+      border-bottom: var(--rule-light);
     }
 
     .hero-label {
       display: block;
       font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gray-medium);
+      color: var(--text-tertiary);
       margin-bottom: calc(var(--unit) * 4);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 7vw + 0.5rem, 4.2rem);
+      font-size: clamp(1.75rem, 4vw + 0.5rem, 2.25rem);
       font-weight: 700;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: calc(var(--unit) * 4);
-      max-width: 12ch;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: calc(var(--unit) * 3);
+      max-width: 18ch;
     }
 
     .hero-subtitle {
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 1.55;
-      color: var(--gray-medium);
-      max-width: 48ch;
+      color: var(--text-secondary);
+      max-width: 52ch;
       margin-bottom: calc(var(--unit) * 6);
     }
 
@@ -97,7 +103,7 @@
       display: flex;
       gap: calc(var(--unit) * 6);
       font-size: 0.8125rem;
-      color: var(--gray-medium);
+      color: var(--text-secondary);
       letter-spacing: 0.02em;
     }
     .hero-meta strong {
@@ -113,17 +119,18 @@
     .hero-cta {
       display: inline-block;
       font-size: 0.8125rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--bg);
-      background: var(--fg);
-      padding: 14px 32px;
+      color: #fff;
+      background: var(--accent);
+      padding: 12px 28px;
+      border-radius: var(--radius);
       text-decoration: none;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background 0.15s ease;
       margin-bottom: calc(var(--unit) * 6);
     }
-    .hero-cta:hover { background: var(--red); color: #FAFAFA; }
+    .hero-cta:hover { background: var(--accent-muted); }
 
     /* --- Skills --- */
     .skills-section {
@@ -132,10 +139,10 @@
 
     .section-label {
       font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gray-medium);
+      color: var(--text-secondary);
       margin-bottom: calc(var(--unit) * 4);
       padding-bottom: calc(var(--unit) * 2);
       border-bottom: var(--rule-heavy);
@@ -159,10 +166,10 @@
     }
 
     .skill-row h3 {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
       line-height: 1.3;
+      color: var(--fg);
     }
 
     .skill-body {
@@ -180,16 +187,17 @@
     }
 
     .skill-body p {
-      font-size: 0.9375rem;
-      color: var(--gray-medium);
-      line-height: 1.55;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .skill-meta {
       font-size: 0.75rem;
-      color: var(--gray-light);
+      color: var(--text-secondary);
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Liberation Mono', monospace;
     }
 
     /* --- Install --- */
@@ -197,34 +205,15 @@
       padding: calc(var(--unit) * 8) 0;
     }
 
-    .install-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: calc(var(--unit) * 4);
-      margin-top: calc(var(--unit) * 4);
-    }
-
-    @media (max-width: 640px) {
-      .install-grid { grid-template-columns: 1fr; }
-    }
-
-    .install-block h3 {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-medium);
-      margin-bottom: calc(var(--unit) * 1.5);
-    }
-
     pre {
-      background: var(--code-bg);
-      color: var(--code-fg);
+      background: var(--surface);
+      color: var(--fg);
       font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Liberation Mono', monospace;
       font-size: 0.8125rem;
       line-height: 1.65;
       padding: calc(var(--unit) * 3);
       overflow-x: auto;
+      border-radius: var(--radius);
     }
 
     .install-block,
@@ -251,13 +240,9 @@
     }
 
     .arch-tree pre {
-      background: transparent;
-      color: var(--fg);
-      padding: 0;
-      font-size: 0.8125rem;
       line-height: 1.7;
     }
-    .arch-tree .c { color: var(--gray-light); }
+    .arch-tree .c { color: var(--text-tertiary); }
 
     .principles {
       list-style: none;
@@ -265,98 +250,53 @@
     .principles li {
       padding: calc(var(--unit) * 2) 0;
       border-bottom: var(--rule-light);
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
     }
     .principles li:last-child { border-bottom: none; }
     .principles strong {
       display: block;
       font-weight: 700;
       margin-bottom: 2px;
+      color: var(--fg);
     }
     .principles span {
-      color: var(--gray-medium);
+      color: var(--text-secondary);
       font-size: 0.875rem;
-    }
-
-    /* --- Sources --- */
-    .sources-section {
-      padding: calc(var(--unit) * 8) 0;
-    }
-
-    .sources-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: calc(var(--unit) * 6);
-      margin-top: calc(var(--unit) * 4);
-    }
-
-    @media (max-width: 640px) {
-      .sources-columns { grid-template-columns: 1fr; }
-    }
-
-    .sources-columns h3 {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-medium);
-      margin-bottom: calc(var(--unit) * 2);
-      padding-bottom: calc(var(--unit) * 1);
-      border-bottom: var(--rule-light);
-    }
-
-    .sources-columns ul {
-      list-style: none;
-    }
-    .sources-columns li {
-      font-size: 0.8125rem;
-      color: var(--gray-medium);
-      padding: 5px 0;
-      line-height: 1.4;
     }
 
     /* --- Footer --- */
     footer {
       padding: calc(var(--unit) * 4) 0;
-      border-top: var(--rule-heavy);
+      border-top: var(--rule-light);
       font-size: 0.75rem;
-      color: var(--gray-light);
+      color: var(--text-secondary);
       letter-spacing: 0.02em;
     }
     footer a {
-      color: var(--gray-medium);
+      color: var(--text-secondary);
       text-decoration: none;
     }
-    footer a:hover { color: var(--red); }
-
-    /* --- Red accent bar --- */
-    .accent-bar {
-      width: 48px;
-      height: 4px;
-      background: var(--red);
-      margin-bottom: calc(var(--unit) * 3);
-    }
+    footer a:hover { color: var(--accent); }
 
     /* --- Skip link --- */
     .skip-link {
       position: absolute;
       top: -100%;
       left: 16px;
-      background: var(--fg);
-      color: var(--bg);
+      background: var(--accent);
+      color: #fff;
       padding: 8px 16px;
       font-size: 0.875rem;
+      border-radius: var(--radius);
       z-index: 100;
       text-decoration: none;
     }
-    .skip-link:focus {
-      top: 16px;
-    }
+    .skip-link:focus { top: 16px; }
 
     /* --- Focus styles --- */
     a:focus-visible,
     button:focus-visible {
-      outline: 2px solid var(--red);
+      outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
   </style>
@@ -368,8 +308,7 @@
   <!-- Hero -->
   <header class="hero">
     <div class="container">
-      <span class="hero-label">Open Source</span>
-      <h1>Design Skills for <span style="color:var(--red)">AI&nbsp;Agents</span></h1>
+<h1>Design Skills for <span style="color:var(--accent)">AI&nbsp;Agents</span></h1>
       <p class="hero-subtitle">Give your AI coding tool real design knowledge. Heuristics, research methods, systems thinking, and real frameworks — for Claude Code, Cursor, Codex, and 40+ other agents.</p>
       <a href="https://github.com/cuellarfr/design-skills" class="hero-cta">View on GitHub</a>
       <div class="hero-meta">
@@ -454,7 +393,7 @@
       <div class="skill-row">
         <h3>UX Writing</h3>
         <div class="skill-body">
-          <p>Clear, concise, user-centered interface copy for digital products. Four quality standards (purposeful, concise, conversational, clear), UX text patterns for every element type, voice and tone frameworks, formatting conventions, accessibility guidelines, and research-backed benchmarks. Originally created by <a href="https://content-designer.github.io/ux-writing-skill/" style="color:var(--fg);text-decoration:underline">content-designer</a>.</p>
+          <p>Clear, concise, user-centered interface copy for digital products. Four quality standards (purposeful, concise, conversational, clear), UX text patterns for every element type, voice and tone frameworks, formatting conventions, accessibility guidelines, and research-backed benchmarks. Originally created by <a href="https://content-designer.github.io/ux-writing-skill/" style="color:var(--accent);text-decoration:underline">content-designer</a>.</p>
           <span class="skill-meta">10 files · ~2,800 lines</span>
         </div>
       </div>
@@ -475,7 +414,7 @@
     <div class="container">
       <h2 class="section-label">Installation</h2>
       <pre style="max-width:480px;margin-top:calc(var(--unit) * 4)"><code>npx skills add cuellarfr/design-skills</code></pre>
-      <p style="font-size:0.875rem;color:var(--gray-medium);margin-top:calc(var(--unit) * 2);max-width:52ch;line-height:1.55">Works with Claude Code, Cursor, Codex, OpenCode, and <a href="https://github.com/vercel-labs/skills#available-agents" style="color:var(--fg);text-decoration:underline">40+ other agents</a>. The CLI detects your installed agents and lets you choose which skills to install.</p>
+      <p style="font-size:0.875rem;color:var(--text-secondary);margin-top:calc(var(--unit) * 2);max-width:52ch;line-height:1.55">Works with Claude Code, Cursor, Codex, OpenCode, and <a href="https://github.com/vercel-labs/skills#available-agents" style="color:var(--accent);text-decoration:underline">40+ other agents</a>. The CLI detects your installed agents and lets you choose which skills to install.</p>
     </div>
   </section>
 
@@ -530,7 +469,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      Made with <span style="color:var(--red)" aria-hidden="true">♥</span> by <a href="https://cuellar.fr">Carlos</a> · MIT License · <a href="https://github.com/cuellarfr/design-skills">GitHub</a>
+      Made with <span style="color:var(--accent)" aria-hidden="true">♥</span> by <a href="https://cuellar.fr">Carlos</a> · MIT License · <a href="https://github.com/cuellarfr/design-skills">GitHub</a>
     </div>
   </footer>
 
