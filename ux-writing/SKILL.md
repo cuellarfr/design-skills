@@ -44,6 +44,7 @@ Every piece of UX text should be:
 - Avoid jargon, idioms, and technical terms
 - Use consistent terminology throughout
 - Choose meaningful, specific verbs
+- Avoid discriminatory or exclusionary language (gendered defaults, ableist idioms, culturally specific metaphors)
 
 **Conversational Tone**
 - Write how you speak
@@ -63,9 +64,11 @@ Apply these common patterns for interface elements.
 
 ### Titles
 - **Purpose**: Orient users to where they are
-- **Format**: Noun phrases, sentence case
+- **Format**: Noun phrases. **Page titles, modal/dialog titles, and menu/navigation items use title case** (see Capitalization below for title-case mechanics). **Lower-level headings (H3+), figure captions, callouts, and table titles use sentence case.**
 - **Types**: Brand titles, content titles, category titles, task titles
-- **Examples**: "Account settings", "Your library", "Create new post"
+- **Examples**:
+  - Page title (title case): "Account Settings", "Your Library", "Create New Post"
+  - Lower-level heading (sentence case): "Recent activity", "Notification preferences", "Billing history"
 
 ### Buttons and Links
 - **Purpose**: Enable users to take action
@@ -159,15 +162,40 @@ Apply these common patterns for interface elements.
 
 ### Capitalization
 
-- **Sentence case** (default): Body text, descriptions, helper text, error messages, success messages, tooltips, placeholder text
+- **Sentence case** (default): Body text, descriptions, helper text, error messages, success messages, tooltips, placeholder text, **button labels**, lower-level (H3+) headings, figure captions, callouts, table titles
 - **Title case**: Page titles, modal/dialog titles, menu and navigation items, form field labels
 - **Never** use all uppercase — it reduces readability and feels like shouting
 
+**Title case mechanics** (applies wherever title case is used):
+
+- Capitalize the first and last word of the title regardless of part of speech.
+- Capitalize all adjectives, adverbs, and nouns.
+- Capitalize all pronouns (including "it").
+- Capitalize all verbs, including the verb "to be" in all forms (is, are, was, has been, etc.).
+- Capitalize "no", "not", and the interjection "O".
+- Do **not** capitalize articles ("a", "an", "the") unless first or last in the title.
+- Do **not** capitalize coordinating conjunctions ("and", "or", "nor", "but", "for", "yet", "so") unless first or last in the title.
+- Do **not** capitalize "to" (with or without an infinitive) unless first or last in the title.
+- Do **not** capitalize prepositions (e.g., "in", "on", "at", "by", "of", "with") unless first or last in the title.
+
+Examples:
+- "Save Changes to Your Profile"
+- "Add a New Payment Method"
+- "How to Reset Your Password"
+
 ### Numbers and Dates
 
-- Use numerals, not words ("12" not "twelve") — saves space and scans faster
-- Spell out the month in dates: "August 5, 2025" or "5 August 2025" — never "8/5/2025" or "8.5.2025" (ambiguous across locales)
-- Spell out day of the week and month; abbreviate only when space is constrained (e.g., tables, mobile)
+- Use numerals, not words ("12" not "twelve") — saves space and scans faster.
+- Spell out the month in dates: "August 5, 2025" or "5 August 2025" — never "8/5/2025" or "8.5.2025" (ambiguous across locales).
+- Spell out day of the week and month; abbreviate only when space is constrained (e.g., tables, mobile): "Sat., Jan. 24".
+- **Avoid ordinal suffixes** in dates: write "August 5", not "August 5th"; write "May 1", not "May 1st".
+- **Year ranges** use a hyphen with the full year on both sides: "2015-2016", not "2015-16" and not "2015 to 2016".
+
+### Currency
+
+- Use the ISO 4217 currency code, separated from the value by a space: `USD 100`, `NZD 100`, `GBP 100`, `EUR 100`.
+- Common codes: USD (United States dollar), NZD (New Zealand dollar), GBP (British pound), EUR (Euro).
+- Prefer the ISO code over the currency symbol (`$`, `£`, `€`) in product UI to disambiguate locales (e.g., USD vs CAD vs AUD).
 
 ### Tense
 
@@ -427,6 +455,13 @@ Use these research-backed metrics to create effective UX text.
 **User-focused**: "Save time with shortcuts" (not "We offer shortcuts")  
 **Specific verbs**: "Delete" (not "Remove" when permanently deleting)  
 **Front-loaded**: "Password must be 8 characters" (not "Must be 8 characters for your password")
+
+## Style references
+
+External references this skill is grounded in (consult these for any case the skill doesn't cover):
+
+- **The Chicago Manual of Style** — fallback for grammar, punctuation, and citation questions.
+- **The Merriam-Webster Dictionary** — fallback for spelling and word choice.
 
 ## Resources
 
