@@ -164,7 +164,7 @@ Apply these common patterns for interface elements.
 
 - **Sentence case** (default): Body text, descriptions, helper text, error messages, success messages, tooltips, placeholder text, **button labels**, lower-level (H3+) headings, figure captions, callouts, table titles
 - **Title case**: Page titles, modal/dialog titles, menu and navigation items, form field labels
-- **Never** use all uppercase — it reduces readability and feels like shouting
+- **All-caps**: Reserved for **short overline / eyebrow labels** (≤3 words) that sit above a heading or metric — e.g., stat-card section headers like `EMPLOYEES`, `TOTAL PAY`, `LAST UPDATED`, category tags over KPI values — and for **acronyms** (`PDF`, `URL`, `API`, `EIN`, `SSN`). Trimble's own product surfaces use this treatment for short category overlines; it's an intentional typographic signal, not shouting. **Do not** use all-caps for prose, button labels, error messages, page titles, tabs/menu labels, or any string longer than ~3 words — beyond that length readability drops sharply and it reads as shouting.
 
 **Title case mechanics** (applies wherever title case is used):
 
