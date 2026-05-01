@@ -67,8 +67,8 @@ Apply these common patterns for interface elements.
 - **Format**: Noun phrases. **Page titles, modal/dialog titles, and menu/navigation items use title case** (see Capitalization below for title-case mechanics). **Lower-level headings (H3+), figure captions, callouts, and table titles use sentence case.**
 - **Types**: Brand titles, content titles, category titles, task titles
 - **Examples**:
-  - Page title (title case): "Account Settings", "Your Library", "Create New Post"
-  - Lower-level heading (sentence case): "Recent activity", "Notification preferences", "Billing history"
+  - Page title (title case): "Account Settings", "Your Library", "Run Payroll"
+  - Lower-level heading (sentence case): "Recent activity", "Bank account details", "Tax withholdings"
 
 ### Buttons and Links
 - **Purpose**: Enable users to take action
@@ -179,9 +179,15 @@ Apply these common patterns for interface elements.
 - Do **not** capitalize prepositions (e.g., "in", "on", "at", "by", "of", "with") unless first or last in the title.
 
 Examples:
-- "Save Changes to Your Profile"
-- "Add a New Payment Method"
-- "How to Reset Your Password"
+- "Run Payroll for the Pay Period"
+- "Add a New Employee"
+- "How to File Quarterly Taxes"
+
+**Lista interpretations of edge cases:**
+
+- **"Coming soon"** is the canonical future-feature label everywhere it appears (badges, callouts, copy). Even when used in a title-cased context, write it sentence case per the `lista-ui-conventions` rule. Do not expose milestone granularity ("Coming at Beta", "Coming at GA") in user-facing strings.
+- **Dropdown action items** (imperative-verb items inside a button-triggered menu, e.g. `"Add employee"`, `"See payroll runs"`, `"Export report"`) are treated as **buttons → sentence case**, not as static navigation menu items. Prism's "menu items use title case" rule applies to **navigational** menus (side nav, breadcrumbs, top-level nav links pointing to pages), not action menus.
+- **Buttons that reference a named page** (e.g. `"Go to Setup Wizard"`, `"Back to Payroll Hub"`, `"Open Time Review"`) **preserve the page name's title case** while the surrounding button copy stays sentence case. The page name is a proper noun in this context.
 
 ### Numbers and Dates
 
@@ -190,12 +196,6 @@ Examples:
 - Spell out day of the week and month; abbreviate only when space is constrained (e.g., tables, mobile): "Sat., Jan. 24".
 - **Avoid ordinal suffixes** in dates: write "August 5", not "August 5th"; write "May 1", not "May 1st".
 - **Year ranges** use a hyphen with the full year on both sides: "2015-2016", not "2015-16" and not "2015 to 2016".
-
-### Currency
-
-- Use the ISO 4217 currency code, separated from the value by a space: `USD 100`, `NZD 100`, `GBP 100`, `EUR 100`.
-- Common codes: USD (United States dollar), NZD (New Zealand dollar), GBP (British pound), EUR (Euro).
-- Prefer the ISO code over the currency symbol (`$`, `£`, `€`) in product UI to disambiguate locales (e.g., USD vs CAD vs AUD).
 
 ### Tense
 
@@ -460,8 +460,11 @@ Use these research-backed metrics to create effective UX text.
 
 External references this skill is grounded in (consult these for any case the skill doesn't cover):
 
+- **Modus Style Guide** — Trimble's design-system writing rules (the canonical source for Modus-branded products).
 - **The Chicago Manual of Style** — fallback for grammar, punctuation, and citation questions.
 - **The Merriam-Webster Dictionary** — fallback for spelling and word choice.
+
+Lista Payroll inherits Prism's writing conventions, which are themselves aligned with Modus. When this skill conflicts with `lista-ui-conventions` (e.g. "Coming soon" copy), the Lista rule wins.
 
 ## Resources
 
