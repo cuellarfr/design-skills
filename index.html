@@ -128,9 +128,31 @@
       border-radius: var(--radius);
       text-decoration: none;
       transition: background 0.15s ease;
-      margin-bottom: calc(var(--unit) * 6);
     }
     .hero-cta:hover { background: var(--accent-muted); }
+
+    .hero-cta-secondary {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .hero-cta-secondary:hover { background: var(--accent-light); }
+
+    .hero-ctas {
+      display: flex;
+      gap: calc(var(--unit) * 2);
+      align-items: center;
+      margin-bottom: calc(var(--unit) * 6);
+      flex-wrap: wrap;
+    }
 
     /* --- Skills --- */
     .skills-section {
@@ -310,7 +332,10 @@
     <div class="container">
 <h1>Design Skills for <span style="color:var(--accent)">AI&nbsp;Agents</span></h1>
       <p class="hero-subtitle">Give your AI coding tool real design knowledge. Heuristics, research methods, systems thinking, and real frameworks — for Claude Code, Cursor, Codex, and 40+ other agents.</p>
-      <a href="#install" class="hero-cta">Get Started</a>
+      <div class="hero-ctas">
+        <a href="#install" class="hero-cta">Get Started</a>
+        <a href="https://github.com/cuellarfr/design-skills" class="hero-cta-secondary">View on GitHub</a>
+      </div>
       <div class="hero-meta">
         <div><strong>10</strong> skills</div>
         <div><strong>119</strong> files</div>
