@@ -49,7 +49,7 @@ Run these layers in order. Each layer catches different types of issues.
 
 #### Layer 1: Automated Scan (10 minutes)
 
-Run automated tools first — they catch ~30-40% of WCAG issues instantly.
+Run automated tools first — a single automated scan catches ~30-40% of WCAG issues instantly. (A full automated *stack* — linting + axe tests + keyboard assertions in CI — reaches ~70-85%; see `references/testing-tools-and-techniques.md`. Either way, the rest needs manual keyboard and screen reader testing.)
 
 **Tools:**
 - **axe DevTools** (browser extension) — Industry standard, low false-positive rate
@@ -258,12 +258,13 @@ Use this during pull requests to catch issues before they ship.
 
 - `references/wcag-checklist.md` — Complete WCAG 2.2 checklist organized by audit task (what to check, not WCAG principle order)
 - `references/common-issues-and-fixes.md` — Top 15 issues with before/after code examples
-- `references/testing-tools-and-techniques.md` — Automated tools, manual techniques, screen reader commands, CI/CD integration
+- `references/testing-tools-and-techniques.md` — Automated tools, static analysis (linting), manual techniques, screen reader commands, CI gating
 
 ## Templates
 
 - `templates/audit-report-template.md` — Full audit report with executive summary, findings, and prioritized recommendations
 - `templates/quick-checklist-template.md` — Single-page checklist for sprint reviews or PR reviews
+- `templates/accessibility-rules-file.md` — Drop-in constraints block for AI coding agents (CLAUDE.md, .cursorrules, copilot-instructions.md) to generate accessible UI by default
 
 ## Examples
 

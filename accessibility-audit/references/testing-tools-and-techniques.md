@@ -61,6 +61,98 @@ test('renders accessible form', async () => {
 
 ---
 
+## Static Analysis (Linting)
+
+Catch a large class of violations before the code ever runs — the earliest, cheapest layer. Essential when UI is written or scaffolded by AI coding agents, which produce semantically broken markup by default (fake `<div>` buttons, non-focusable interactive elements, unlabeled icons).
+
+### eslint-plugin-jsx-a11y (React/JSX)
+
+```bash
+npm install --save-dev eslint-plugin-jsx-a11y
+```
+
+Enable the `recommended` (or stricter `strict`) config, and promote the highest-value rules to `error` so they block, rather than warn:
+
+```js
+// eslint.config.js (flat config)
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+
+export default [
+  jsxA11y.flatConfigs.recommended,
+  {
+    rules: {
+      'jsx-a11y/no-static-element-interactions': 'error',
+      'jsx-a11y/click-events-have-key-events': 'error',
+      'jsx-a11y/alt-text': 'error',
+      'jsx-a11y/anchor-has-content': 'error',
+      'jsx-a11y/aria-props': 'error',
+      'jsx-a11y/aria-proptypes': 'error',
+      'jsx-a11y/role-has-required-aria-props': 'error',
+      'jsx-a11y/label-has-associated-control': 'error',
+    },
+  },
+];
+```
+
+| Rule | Catches |
+|---|---|
+| `no-static-element-interactions` | Click handlers on non-interactive elements (`<div onClick>`) |
+| `click-events-have-key-events` | Clickable elements with no keyboard handler |
+| `alt-text` | `<img>`/`<area>`/SVG missing a text alternative |
+| `anchor-has-content` | Links with no accessible text |
+| `aria-props` / `aria-proptypes` | Misspelled ARIA attributes or invalid values |
+| `role-has-required-aria-props` | A `role` missing its required ARIA attributes |
+| `label-has-associated-control` | `<label>` not tied to a form control |
+
+**What linting can't catch:** whether an accessible name is *meaningful*, correct focus *order*, live-region behavior, or actual screen-reader output. It validates structure, not experience — pair it with runtime and manual layers.
+
+### Other frameworks
+
+| Framework | Tool |
+|---|---|
+| Vue | `eslint-plugin-vuejs-accessibility` |
+| Angular | Angular template accessibility lint rules (`@angular-eslint`) + Codelyzer |
+| Svelte | `svelte-check` (a11y warnings built into the Svelte compiler) |
+| HTML (any stack) | `html-validate` with accessibility rules, or `axe` in tests |
+
+---
+
+## CI Gating
+
+Linting and axe tests only prevent regressions if the build **fails** on violations. Wire all three automated layers into the pipeline and block merges that break them.
+
+```yaml
+# .github/workflows/accessibility.yml
+name: accessibility
+on: [pull_request]
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+
+      # Layer 1: static analysis — no warnings allowed
+      - run: npx eslint . --max-warnings 0
+
+      # Layer 2: component tests with jest-axe
+      - run: npm test
+
+      # Layer 3: E2E axe scan on running pages (tagged @a11y)
+      - run: npx playwright test --grep @a11y
+```
+
+**Gating principles:**
+- Run `eslint` with `--max-warnings 0` so a11y warnings can't accumulate.
+- Assert `results.violations` is empty in axe tests — a non-empty array fails the job.
+- Test components in **each interactive state** (e.g. accordion collapsed *and* expanded); a single render misses state-dependent ARIA.
+- Automated CI covers ~70–85% of real-world issues. The remaining 15–30% (meaningful labels, focus order, live regions) still requires manual keyboard + screen reader passes — gate those with a review checklist, not the pipeline.
+
+---
+
 ## Keyboard Testing
 
 ### Setup
