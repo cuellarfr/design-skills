@@ -27,11 +27,11 @@ Provides a structured 9-step critique framework grounded in Nielsen's 10 heurist
 ### Accessibility Audit
 Conduct accessibility audits against WCAG 2.2 guidelines.
 
-A 5-layer audit process (automated, keyboard, screen reader, visual, flow) covering conformance at A, AA, and AAA levels. Identifies issues, assesses severity, provides code fixes, and generates audit reports.
+A 5-layer audit process (automated, keyboard, screen reader, visual, flow) covering conformance at A, AA, and AAA levels. Identifies issues, assesses severity, provides code fixes, and generates audit reports — plus generation-time prevention for AI-authored UI, which is inaccessible by default.
 
-**Key references:** Complete WCAG 2.2 checklist reorganized into 11 audit task groups, 15 common issues with before/after code examples, testing tools comparison (axe, WAVE, Lighthouse, Pa11y), CI/CD integration code, keyboard and screen reader test scripts.
+**Key references:** Complete WCAG 2.2 checklist reorganized into 11 audit task groups, 15 common issues with before/after code examples, testing tools comparison (axe, WAVE, Lighthouse, Pa11y), static analysis (eslint-plugin-jsx-a11y) and CI gating, keyboard and screen reader test scripts, and a drop-in accessibility rules-file template for AI coding agents (CLAUDE.md, .cursorrules, copilot-instructions.md).
 
-`8 files` · `2,175 lines`
+`9 files` · `~2,400 lines`
 
 ### Journey Mapping
 Create customer journey maps, service blueprints, experience maps, empathy maps, and other alignment diagrams.
