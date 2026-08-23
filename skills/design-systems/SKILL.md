@@ -1,5 +1,5 @@
 ---
-name: Design Systems
+name: design-systems
 description: Build, document, and maintain design systems with design tokens, component specifications, pattern libraries, naming conventions, and governance processes. Conduct system audits, define component hierarchies, and establish shared design languages.
 ---
 

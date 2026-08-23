@@ -1,5 +1,5 @@
 ---
-name: Interaction Design
+name: interaction-design
 description: Design meaningful interactions, microinteractions, animations, state machines, gesture patterns, error prevention, and product behavior. Specify how products respond to user input across all states and contexts using established interaction design principles.
 ---
 

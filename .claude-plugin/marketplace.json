@@ -1,0 +1,32 @@
+{
+  "name": "design-skills",
+  "owner": {
+    "name": "Carlos Cuellar",
+    "url": "https://github.com/cuellarfr"
+  },
+  "description": "UX and design skills for AI coding agents.",
+  "plugins": [
+    {
+      "name": "design-skills",
+      "source": "./",
+      "description": "Ten UX and design skills that give coding agents deep knowledge of established design frameworks: research, critique, accessibility, journey mapping, design systems, strategy, interaction design, design ops, UX writing, and visual elevation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Carlos Cuellar"
+      },
+      "homepage": "https://cuellarfr.github.io/design-skills/",
+      "repository": "https://github.com/cuellarfr/design-skills",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "design",
+        "ux",
+        "accessibility",
+        "design-systems",
+        "ux-research",
+        "ux-writing",
+        "interaction-design"
+      ]
+    }
+  ]
+}

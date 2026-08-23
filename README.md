@@ -98,6 +98,8 @@ Systematically elevates any visual output — dashboards, presentations, reports
 
 ## Installation
 
+### Any agent — `npx skills`
+
 ```bash
 npx skills add cuellarfr/design-skills
 ```
@@ -118,12 +120,27 @@ npx skills add cuellarfr/design-skills -g
 npx skills add cuellarfr/design-skills -a claude-code
 ```
 
-## Skill Architecture
+### Claude Code — as a plugin
 
-Each skill follows a consistent structure:
+All ten skills also ship as a single Claude Code plugin, which keeps them updatable through `/plugin` and namespaces them under `design-skills:`.
 
 ```
-skill-name/
+/plugin marketplace add cuellarfr/design-skills
+/plugin install design-skills@design-skills
+```
+
+Skills are model-invoked — Claude loads the right one based on what you're working on. You can also call one directly:
+
+```
+/design-skills:accessibility-audit
+```
+
+## Skill Architecture
+
+Each skill lives under `skills/` and follows a consistent structure:
+
+```
+skills/skill-name/
 ├── SKILL.md              # Main skill file (200-350 lines)
 │                          # Standalone — works without reference files
 │                          # Contains frameworks, tables, checklists, quick references

@@ -1,5 +1,5 @@
 ---
-name: Journey Mapping & Service Design
+name: journey-mapping
 description: Create customer journey maps, service blueprints, experience maps, empathy maps, and other alignment diagrams. Guides diagram type selection, content structure, illustration syntax, and alignment workshops.
 ---
 

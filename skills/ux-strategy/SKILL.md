@@ -1,5 +1,5 @@
 ---
-name: UX Strategy
+name: ux-strategy
 description: Connect design decisions to business outcomes through competitive analysis, opportunity mapping, Jobs to Be Done, outcome-driven discovery, value proposition design, and UX metrics. Shape product direction with strategic frameworks grounded in evidence.
 ---
 

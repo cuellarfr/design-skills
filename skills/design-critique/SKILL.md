@@ -1,5 +1,5 @@
 ---
-name: Design Critique & Evaluation
+name: design-critique
 description: Evaluate UI designs against usability heuristics, UX laws, interaction patterns, interaction design principles, information architecture, and content quality. Conduct heuristic evaluations, structured design critiques, pattern-based reviews, posture analysis, excise audits, IA evaluations, and UX writing reviews. Provides specific, actionable feedback grounded in established principles rather than subjective opinion.
 ---
 

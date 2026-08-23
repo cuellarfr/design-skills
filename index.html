@@ -440,6 +440,9 @@
       <h2 class="section-label">Installation</h2>
       <pre style="max-width:480px;margin-top:calc(var(--unit) * 4)"><code>npx skills add cuellarfr/design-skills</code></pre>
       <p style="font-size:0.875rem;color:var(--text-secondary);margin-top:calc(var(--unit) * 2);max-width:52ch;line-height:1.55">Works with Claude Code, Cursor, Codex, OpenCode, and <a href="https://github.com/vercel-labs/skills#available-agents" style="color:var(--accent);text-decoration:underline">40+ other agents</a>. The CLI detects your installed agents and lets you choose which skills to install.</p>
+      <pre style="max-width:480px;margin-top:calc(var(--unit) * 5)"><code>/plugin marketplace add cuellarfr/design-skills
+/plugin install design-skills@design-skills</code></pre>
+      <p style="font-size:0.875rem;color:var(--text-secondary);margin-top:calc(var(--unit) * 2);max-width:52ch;line-height:1.55">Or install all ten as a single Claude Code plugin, updatable through <code>/plugin</code>.</p>
     </div>
   </section>
 
@@ -449,7 +452,7 @@
       <h2 class="section-label">How skills are structured</h2>
       <div class="arch-grid">
         <div class="arch-tree">
-          <pre>skill-name/
+          <pre>skills/skill-name/
 ├── SKILL.md              <span class="c"># Main file — works standalone</span>
 │
 ├── references/           <span class="c"># Deep reference material</span>
